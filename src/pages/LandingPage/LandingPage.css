@@ -1,0 +1,339 @@
+h3 {
+  font-size: 30px;
+  margin: 0;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 15px 0px;
+}
+
+p {
+  margin: 0;
+}
+
+.landing-page .navigation-bar-container {
+  background: linear-gradient(180deg, #0E003A 0%, #10013E 100%);
+}
+
+.landing-page .navigation-bar-container .contents {
+  display: flex;
+  margin: auto;
+  padding: 30px 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.landing-page .navigation-bar-container .lhs {
+  display: flex;
+}
+
+.landing-page .site-title {
+  font-family: "Metropolis Bold";
+  font-size: 40px;
+  color: white;
+  letter-spacing: -3px;
+  text-decoration: none;
+}
+
+.landing-page .search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 10px;
+  border: 1px solid var(--Translucent-White, rgba(255, 255, 255, 0.15));
+  height: 50px;
+  width: 45vw;
+  padding: 0px 20px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.landing-page .search-bar p {
+  color: var(--Translucent-White, rgba(255, 255, 255, 0.4));
+  margin-left: 10px;
+}
+
+.landing-page .navigation-bar-container button {
+  font-family: "Metropolis Semibold";
+  letter-spacing: -1px;
+  color: white;
+  padding: 0px 30px;
+  height: 50px;
+  margin-left: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--Translucent-White, rgba(255, 255, 255, 0.15));
+  background: linear-gradient(180deg, rgba(77, 69, 115, 0.50) 0%, rgba(77, 69, 115, 0.40) 100%);
+}
+
+.landing-page .cover-container {
+  background: linear-gradient(180deg, #11023F 0%, #1D0658 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.20);
+}
+
+.landing-page .hero-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90rem;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.landing-page .hero-cta h2 {
+  font-family: "Metropolis Bold";
+  font-size: 40px;
+  letter-spacing: -3px;
+  color: white;
+  max-width: 600px;
+  text-align: center;
+  line-height: 45px;
+}
+
+.landing-page .hero-cta button {
+  font-family: "Metropolis Semibold";
+  font-size: 24px;
+  letter-spacing: -1.5px;
+  color: white;
+  width: 315px;
+  height: 73px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: radial-gradient(136.36% 136.36% at 50.77% -36.36%, #4D44D3 0%, #2814D3 100%);
+  margin: 0;
+}
+
+.landing-page .cover-container img {
+  margin: 60px 0px;
+  width: 1200px;
+}
+
+.landing-page .intro-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 75rem;
+  margin: auto;
+  padding: 150px 150px;
+}
+
+.landing-page .intro-section .lhs p {
+  max-width: 500px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+.landing-page .intro-section h3 {
+  color: #483DE2;
+}
+
+.landing-page .intro-section .lhs button {
+  font-family: "Metropolis Semibold";
+  font-size: 24px;
+  letter-spacing: -1.5px;
+  color: white;
+  width: 217px;
+  height: 73px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: radial-gradient(136.36% 136.36% at 50.77% -36.36%, #4D44D3 0%, #2814D3 100%);
+  margin-top: 15px;
+}
+
+.landing-page .intro-section img {
+  filter: drop-shadow(0px 4px 40px rgba(0, 32, 202, 0.50));
+  width: 521px;
+}
+
+.landing-page .pricing-section {
+  background: #F0F0FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding: 100px 150px;
+}
+
+.landing-page .pricing-section .titles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.landing-page .pricing-section .titles h3 {
+  width: 450px;
+  margin-bottom: 20px;
+}
+
+.landing-page .pricing-panels {
+  display: flex;
+}
+
+.landing-page .panel {
+  width: 400px;
+  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.05));
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--High-Contrast-White, #FFF);
+}
+
+.landing-page .panel .main-info {
+  padding: 30px;
+}
+
+.landing-page .panel.free {
+  margin-right: 20px;
+}
+
+.landing-page .panel.free h3 {
+  color: #5C51FF;
+}
+
+.landing-page .panel.trivio-plus h3 {
+  color: #F3A708;
+}
+
+.landing-page .panel .price-ratio {
+  display: flex;
+  align-items: baseline;
+  margin: 10px 0px;
+}
+
+.landing-page .panel .price-ratio h1 {
+  margin: 0;
+}
+
+.landing-page .panel .main-info p {
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+.landing-page .panel.trivio-plus .billing-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.landing-page .billing-details .billing-rate-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.landing-page .billing-details .billing-rate-toggle p {
+  font-family: 'Metropolis';
+  font-size: 14px;
+  color: #6360DC;
+  margin-right: 3px;
+}
+
+.landing-page .panel .billing-detail {
+  font-family: "Metropolis Medium";
+  translate: -3px 0px;
+}
+
+.landing-page .panel.free button {
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: radial-gradient(136.36% 136.36% at 50.77% -36.36%, #4D44D3 0%, #2814D3 100%);
+}
+
+.landing-page .panel.trivio-plus button {
+  border: 1px solid rgba(255, 237, 202, 0.80);
+  background: linear-gradient(180deg, rgba(255, 173, 0, 0.90) 0%, rgba(255, 138, 0, 0.90) 100%);
+}
+
+.landing-page .panel button {
+  font-family: "Metropolis Semibold";
+  font-size: 20px;
+  letter-spacing: -1.5px;
+  color: white;
+  width: 345px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  margin: 20px 0px;
+}
+
+.landing-page .panel .features {
+  border-radius: 0px 0px 10px 10px;
+  background: #F5F7FF;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.landing-page .panel .feature {
+  display: flex;
+  margin: 0px 30px;
+  height: 60px;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.landing-page .panel .feature:last-child {
+  border-bottom: none;
+}
+
+.landing-page .panel .feature p {
+  margin-left: 10px;
+}
+
+.landing-page .app-info-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 75rem;
+  margin: auto;
+  padding: 100px 150px;
+}
+
+.landing-page .app-info-section .screenshots {
+  width: 547px;
+}
+
+.landing-page .app-info-section .rhs {
+  max-width: 480px;
+}
+
+.landing-page .app-info-section .rhs h3 {
+  color: #483DE2;
+}
+
+.landing-page .app-info-section .rhs p {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+.landing-page .app-info-section .rhs img {
+  width: 191px;
+}
+
+.landing-page .footer h4 {
+  letter-spacing: -1px;
+}
+
+.landing-page .footer {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F0F0FF;
+  padding: 50px;
+  letter-spacing: -0.5px;
+}
+
+.landing-page .footer-links {
+  font-family: 'Metropolis';
+  color: var(--PrimaryFG, #0D042B);
+  text-decoration: none;
+  margin-left: 50px;
+  opacity: 0.4;
+}

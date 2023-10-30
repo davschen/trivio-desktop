@@ -1,0 +1,93 @@
+.authentication {
+  background: linear-gradient(180deg, #0E003A 0%, #1D0658 100%);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.authentication .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.authentication .logo {
+  font-family: 'Metropolis Bold';
+  font-size: 140px;
+  text-shadow: 0px 30px 200px rgba(255, 255, 255, 0.80);
+  letter-spacing: -9.8px;
+  color: white;
+}
+
+.authentication .subheading {
+  color: rgba(255, 255, 255, 0.90);
+  text-align: center;
+  font-family: 'Metropolis Semibold';
+  font-size: 40px;
+  letter-spacing: -3px;
+}
+
+.authentication .google-auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 391px;
+  height: 75px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: var(--High-Contrast-White, #FFF);
+  margin-top: 45px;
+}
+
+.authentication .google-auth img {
+  width: 25px;
+  margin-right: 10px;
+  translate: 0px -1px;
+}
+
+.authentication .google-auth p {
+  color: #000;
+  font-family: 'Metropolis Semibold';
+  font-size: 26px;
+  line-height: 22px; /* 84.615% */
+  letter-spacing: -1.82px;
+}
+
+.authentication .apple-auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 391px;
+  height: 75px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #000;
+  margin-top: 20px;
+}
+
+.authentication .apple-auth img {
+  width: 22px;
+  margin-right: 14px;
+  translate: 0px -1px;
+}
+
+.authentication .apple-auth p {
+  color: #fff;
+  font-family: 'Metropolis Semibold';
+  font-size: 26px;
+  line-height: 22px; /* 84.615% */
+  letter-spacing: -1.82px;
+}
+
+.authentication .container .disclaimer {
+  color: rgba(255, 255, 255, 0.60);
+  text-align: center;
+  width: 370px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -1.26px;
+  margin-top: 45px;
+}
