@@ -1,11 +1,12 @@
 import './LandingPage.css';
 import { Link } from 'react-router-dom';
 
+import NavigationBar from "../Shared/NavigationBar";
+
 import LandingPageCover from '../../images/LandingPage/LandingPageCover.png';
 import CluePreview from '../../images/LandingPage/CluePreview.png';
 import MobileAppScreenshots from '../../images/LandingPage/MobileAppScreenshots.png';
 
-import MagnifyingGlassIcon from '../../images/LandingPage/MagnifyingGlassIcon.png';
 import CheckmarkIcon from '../../images/LandingPage/CheckmarkIcon.png';
 import XmarkIcon from '../../images/LandingPage/XmarkIcon.png';
 import ArrowRightIcon from '../../images/LandingPage/ArrowRightIcon.png';
@@ -14,21 +15,7 @@ import AppStoreBadge from '../../images/LandingPage/AppStoreBadge.png';
 const LandingPage = () => {
   return (
     <div className="landing-page">
-      <div className="navigation-bar-container">
-        <div className="contents">
-          <Link className="site-title" to="/">Trivio!</Link>
-          <div className="lhs">
-            <div className="search-bar">
-              <img src={MagnifyingGlassIcon} alt="Magnifying Glass Icon" />
-              <p>Search all sets</p>
-            </div>
-            <button>Join a game</button>
-            <Link to="/sign-in">
-              <button>Sign in</button>
-            </Link>
-          </div>
-        </div>
-      </div>
+      <NavigationBar/>
       <div className="cover-container">
         <div className="hero-cta">
           <h2>The most authentic live Jeopardy experience on the web</h2>

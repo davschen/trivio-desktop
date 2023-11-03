@@ -1,0 +1,84 @@
+.my-sets-grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.my-set-preview-card {
+  flex: 1 0 calc(50% - 20px);
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #434077;
+  background: linear-gradient(115deg, #2E216F 22.75%, #241668 76.38%);
+}
+
+.my-set-preview-card .header {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  margin-bottom: 13px;
+}
+
+.my-set-preview-card .header h4 {
+  font-size: 24px;
+  margin: auto;
+}
+
+.my-set-preview-card .header .lhs {
+  display: flex;
+}
+
+.my-set-preview-card .header .lhs img {
+  width: 14px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.my-set-preview-card .header .more-options img {
+  height: 4px;
+  translate: 0px -4px;
+}
+
+.my-set-preview-card .set-info {
+  color: white;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.my-set-preview-card .set-description {
+  color: rgba(255, 255, 255, 0.60);
+  height: 60px;
+}
+
+.my-set-preview-card .user-info {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.my-set-preview-card .user-info button {
+  color: white;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 19px;
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  background: radial-gradient(136.36% 136.36% at 50.77% -36.36%, #4D44D3 0%, #2814D3 100%);
+  margin-right: 10px;
+}
+
+.my-set-preview-card .user-info button p {
+  font-family: "Metropolis Bold Italic";
+  font-size: 12px;
+}
+
+.my-set-preview-card .user-info .set-creator-details {
+  font-size: 14px;
+}
+
+.my-set-preview-card .user-info .date-string {
+  color: var(--Low-Contrast-White, rgba(255, 255, 255, 0.40));
+  margin-top: 4px;
+}

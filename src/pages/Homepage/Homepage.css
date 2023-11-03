@@ -1,0 +1,75 @@
+.homepage .homepage-container {
+  background: linear-gradient(180deg, #11023F 0%, #1D0658 100%);
+  height: calc(100vh - 112px);
+  border-top: 1px solid rgba(255, 255, 255, 0.20);
+  overflow-y: auto;
+}
+
+.homepage .all-sets .sets-section {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  width: 40vw;
+  margin-top: 100px;
+}
+
+.homepage .sets-section .section-heading .titles {
+  display: flex;
+  align-items: center;
+}
+
+.homepage .sets-section .section-heading .titles img {
+  width: 9px;
+  height: 17px;
+  margin-left: 15px;
+}
+
+.homepage .sets-section .section-heading {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+}
+
+.homepage .sets-section .section-heading .build-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 179px;
+  height: 51px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: radial-gradient(136.36% 136.36% at 50.77% -36.36%, #4D44D3 0%, #2814D3 100%);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.homepage .sets-section .section-heading .build-button p {
+  color: white;
+  font-family: "Metropolis Semibold";
+  font-size: 20px;
+  letter-spacing: -1px;
+  translate: 0px -1px;
+}
+
+.homepage .sets-section .section-heading .build-button img {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  translate: 0px -2px;
+}
+
+.homepage .sets-section .section-heading .see-more-button {
+  width: 161px;
+  height: 51px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid var(--Translucent-White, rgba(255, 255, 255, 0.15));
+  background: linear-gradient(180deg, rgba(77, 69, 115, 0.50) 0%, rgba(77, 69, 115, 0.40) 100%);
+}
+
+.homepage .sets-section .section-heading .see-more-button p {
+  color: white;
+  font-family: "Metropolis Semibold";
+  font-size: 20px;
+  letter-spacing: -1px;
+}
