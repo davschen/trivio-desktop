@@ -1,0 +1,137 @@
+.set-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.set-preview .contents-card {
+  width: 40rem;
+  height: 60vh;
+  border-radius: 10px;
+  border: 1px solid #434077;
+  background: linear-gradient(115deg, #2E216F 22.75%, #241668 76.38%);
+}
+
+.set-preview .heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 35px;
+  padding-top: 35px;
+}
+
+.set-preview .heading h2 {
+  font-size: 40px;
+  margin: 0;
+}
+
+.set-preview .heading button img {
+  width: 50px;
+}
+
+.set-preview .subheading {
+  font-family: "Metropolis Medium";
+  font-size: 20px;
+  padding: 0px 35px;
+}
+
+.set-preview .description {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.60);
+  margin-top: 10px;
+  padding: 0px 35px;
+}
+
+.set-preview .host-options-buttons {
+  margin-top: 25px;
+  margin-bottom: 50px;
+  padding: 0px 35px;
+}
+
+.set-preview .host-options-buttons .free-option {
+  width: 267px;
+  height: 73px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: radial-gradient(136.36% 136.36% at 50.77% -36.36%, #4D44D3 0%, #2814D3 100%);
+  margin-right: 15px;
+}
+
+.set-preview .host-options-buttons .trivio-plus-option {
+  width: 267px;
+  height: 73px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 196, 81, 0.80);
+  background: linear-gradient(180deg, rgba(255, 173, 0, 0.90) 0%, rgba(255, 138, 0, 0.90) 100%);
+}
+
+.set-preview .host-options-buttons .contents {
+  color: white;
+}
+
+.set-preview .host-options-buttons .contents h4 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.set-preview .host-options-buttons .contents p {
+  color: rgba(255, 255, 255, 0.60);
+}
+
+.set-preview .category-previews .titles {
+  display: flex;
+  font-size: 22px;
+  padding: 0px 35px;
+}
+
+.set-preview .category-previews .titles h4 {
+  margin: 0;
+  margin-right: 10px;
+}
+
+.set-preview .category-previews .titles p {
+  color: rgba(255, 255, 255, 0.40); 
+}
+
+.set-preview .category-list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+  padding: 0px 35px;
+  margin-top: 10px;
+}
+
+.set-preview .category-list::-webkit-scrollbar {
+  display: none;
+}
+
+.set-preview .category-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 165px;
+  height: 120px;
+  text-align: center;
+  border-radius: 10px;
+  background: #392E96;
+  margin-right: 5px;
+}
+
+.set-preview .category-name p {
+  font-family: "Metropolis Semibold";
+  font-size: 20px;
+  letter-spacing: -1.5px;
+  padding: 15px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}

@@ -5,23 +5,12 @@ import useSyncRecommendedSets from "../../hooks/useSyncRecommendedSets";
 
 import LockFill from "../../images/Homepage/LockFill.png";
 import Ellipsis from "../../images/Homepage/Ellipsis.png";
+import { getUserInitials } from "../../utils/StringUtils";
 
-const RecommendedSetsGrid = () => {
+const RecommendedSetsGrid = (props) => {
   useSyncRecommendedSets();
   const recommendedSets = useSelector(state => state.customSets.recommendedSets);
   const setIDAuthorDict = useSelector(state => state.customSets.setIDAuthorDict);
-
-  function getUserInitials(name) {
-    let rgx = new RegExp(/(\p{L}{1})\p{L}+/, 'gu');
-
-    let initials = [...name.matchAll(rgx)] || [];
-    
-    initials = (
-      (initials.shift()?.[1] || '') + (initials.pop()?.[1] || '')
-    ).toUpperCase();
-
-    return initials;
-  }
 
   function firestoreTimestampToString(timestampStr) {
     // Extract seconds using regex
@@ -42,7 +31,7 @@ const RecommendedSetsGrid = () => {
   return (
     <div className="sets-grid-container">
       {recommendedSets.map((recommendedSet, index) => (
-        <div key={index} className="set-preview-card">
+        <div onClick={() => props.onSetClick(recommendedSet)} key={index} className="set-preview-card">
           <div className="header">
             <div className="lhs">
               { !recommendedSet.isPublic &&

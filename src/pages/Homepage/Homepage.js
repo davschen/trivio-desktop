@@ -1,5 +1,9 @@
-import { useState } from "react";
 import './Homepage.css';
+
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { assignCurrentCustomSet } from "../../redux/customSets/customSetsSlice";
 
 import NavigationBar from "../Shared/NavigationBar";
 import MySetsGrid from "./MySetsGrid";
@@ -10,13 +14,21 @@ import PlusSign from "../../images/Homepage/PlusSign.png";
 import SetPreview from "../SetPreview/SetPreview";
 
 const Homepage = () => {
-  const [showSetPreview, setShowSetPreview] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const [selectedSetID, setSelectedSetID] = useState(null);
+  const handleSetClick = (customSet) => {
+    dispatch(assignCurrentCustomSet(customSet));
+    setSelectedSetID(customSet.id);
+    navigate(`/browse?jbv=${customSet.id}`);
+  }
   
   return (
-    <div className="main-container">
-      <div className="homepage">
+    <div className="homepage-parent-container">
+      <div style={{filter: selectedSetID && "blur(40px)"}} className="homepage">
         <NavigationBar/>
-        <div className="homepage-container">
+        <div className="contents-container">
           <div className="all-sets">
             <div className="sets-section">
               <div className="section-heading">
@@ -29,7 +41,7 @@ const Homepage = () => {
                   <p>Build a Set</p>
                 </button>
               </div>
-              <MySetsGrid/>
+              <MySetsGrid onSetClick={handleSetClick}/>
             </div>
             <div className="sets-section">
               <div className="section-heading">
@@ -40,12 +52,19 @@ const Homepage = () => {
                   <p>See More</p>
                 </button>
               </div>
-              <RecommendedSetsGrid/>
+              <RecommendedSetsGrid onSetClick={handleSetClick}/>
             </div>
           </div>
         </div>
       </div>
-      {showSetPreview && <SetPreview/>}
+      {selectedSetID && (
+        <SetPreview
+          onClose={() => {
+            setSelectedSetID(null);
+            navigate('/browse');
+          }}
+        />
+      )}
     </div>
   );
 }

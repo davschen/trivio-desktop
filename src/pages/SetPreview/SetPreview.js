@@ -1,20 +1,36 @@
 import './SetPreview.css';
 import CloseButton from "../../images/SetPreview/CloseButton.png";
 import { useSelector } from "react-redux";
+import { firestoreTimestampToString } from "../../utils/DateUtils";
 
-const SetPreview = () => {
+const SetPreview = (props) => {
   const currentCustomSet = useSelector(state => state.customSets.currentCustomSet);
+  const user = useSelector(state => state.user);
   const setIDAuthorDict = useSelector(state => state.customSets.setIDAuthorDict);
+  
+  function getAuthorName() {
+    if (currentCustomSet.userID === user.UUID) {
+      return user.name;
+    } else {
+      return setIDAuthorDict[currentCustomSet.id];
+    }
+  }
 
   return (
     <div className="set-preview">
       <div className="contents-card">
         <div className="heading">
           <h2>{currentCustomSet.title}</h2>
-          <img src={CloseButton} alt="Xmark button"/>
+          <button onClick={() => props.onClose()}>
+            <img src={CloseButton} alt="Xmark button"/>
+          </button>
         </div>
         <div className="subheading">
-          <p>Created by {setIDAuthorDict[currentCustomSet.id]} on {currentCustomSet.dateCreated}</p>
+          <p>
+            Created by {getAuthorName()} on {
+              firestoreTimestampToString(currentCustomSet.dateCreated)
+            }
+          </p>
         </div>
         <p className="description">{currentCustomSet.description}</p>
         <div className="host-options-buttons">
@@ -38,25 +54,27 @@ const SetPreview = () => {
           </div>
           <div className="category-list">
             {currentCustomSet.round1CategoryNames.map((categoryName, index) => (
-              <div>
+              <div className="category-name" key={index}>
                 <p>{categoryName}</p>
               </div>
             ))}
           </div>
         </div>
-        <div className="category-previews">
-          <div className="titles">
-            <h4>Round 2 Preview</h4>
-            <p>({currentCustomSet.round2Len} categories)</p>
+        { currentCustomSet.hasTwoRounds &&
+          <div style={{paddingTop: '40px'}} className="category-previews">
+            <div className="titles">
+              <h4>Round 2 Preview</h4>
+              <p>({currentCustomSet.round2Len} categories)</p>
+            </div>
+            <div className="category-list">
+              {currentCustomSet.round2CategoryNames.map((categoryName, index) => (
+                <div className="category-name" key={index}>
+                  <p>{categoryName}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="category-list">
-            {currentCustomSet.round2CategoryNames.map((categoryName, index) => (
-              <div>
-                <p>{categoryName}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        }
       </div>
     </div>
   );

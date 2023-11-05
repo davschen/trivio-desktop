@@ -1,4 +1,10 @@
-.homepage .homepage-container {
+.homepage-parent-container {
+  position: relative;
+  width: 100%;
+  height: 100%; 
+}
+
+.homepage .contents-container {
   background: linear-gradient(180deg, #11023F 0%, #1D0658 100%);
   height: calc(100vh - 112px);
   border-top: 1px solid rgba(255, 255, 255, 0.20);

@@ -6,30 +6,18 @@ import { firestoreTimestampToString } from "../../utils/DateUtils";
 
 import LockFill from "../../images/Homepage/LockFill.png";
 import Ellipsis from "../../images/Homepage/Ellipsis.png";
+import { getUserInitials } from "../../utils/StringUtils";
 
-const MySetsGrid = () => {
+const MySetsGrid = (props) => {
   useSyncMyCustomSetsWithFirestore();
 
   const myCustomSets = useSelector(state => state.customSets.myCustomSets);
   const user = useSelector(state => state.user);
-  
-  function getUserInitials(name) {
-    if (!name) { return ""; }
-    let rgx = new RegExp(/(\p{L}{1})\p{L}+/, 'gu');
-
-    let initials = [...name.matchAll(rgx)] || [];
-    
-    initials = (
-      (initials.shift()?.[1] || '') + (initials.pop()?.[1] || '')
-    ).toUpperCase();
-
-    return initials;
-  }
 
   return (
     <div className="my-sets-grid-container">
       {myCustomSets.map((myCustomSet, index) => (
-        <div key={index} className="my-set-preview-card">
+        <div onClick={() => props.onSetClick(myCustomSet)} key={index} className="my-set-preview-card">
           <div className="header">
             <div className="lhs">
               { !myCustomSet.isPublic &&
