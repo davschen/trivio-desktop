@@ -17,7 +17,11 @@ const MySetsGrid = (props) => {
   return (
     <div className="my-sets-grid-container">
       {myCustomSets.map((myCustomSet, index) => (
-        <div onClick={() => props.onSetClick(myCustomSet)} key={index} className="my-set-preview-card">
+        <div 
+          style = {{cursor: 'pointer'}}
+          onClick={() => props.onSetClick(myCustomSet)} 
+          key={index} 
+          className="my-set-preview-card">
           <div className="header">
             <div className="lhs">
               { !myCustomSet.isPublic &&

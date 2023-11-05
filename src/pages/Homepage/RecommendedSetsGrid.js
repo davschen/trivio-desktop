@@ -6,32 +6,21 @@ import useSyncRecommendedSets from "../../hooks/useSyncRecommendedSets";
 import LockFill from "../../images/Homepage/LockFill.png";
 import Ellipsis from "../../images/Homepage/Ellipsis.png";
 import { getUserInitials } from "../../utils/StringUtils";
+import { firestoreTimestampToString } from "../../utils/DateUtils";
 
 const RecommendedSetsGrid = (props) => {
   useSyncRecommendedSets();
   const recommendedSets = useSelector(state => state.customSets.recommendedSets);
   const setIDAuthorDict = useSelector(state => state.customSets.setIDAuthorDict);
 
-  function firestoreTimestampToString(timestampStr) {
-    // Extract seconds using regex
-    const match = timestampStr.match(/seconds=(\d+),/);
-    if (!match) return null; // or handle the error
-  
-    const seconds = parseInt(match[1], 10);
-    const date = new Date(seconds * 1000); // Convert seconds to milliseconds
-  
-    // Format the date as MM/DD/YYYY
-    const month = String(date.getMonth() + 1);
-    const day = String(date.getDate());
-    const year = date.getFullYear();
-  
-    return `${month}/${day}/${year}`;
-  };
-
   return (
     <div className="sets-grid-container">
       {recommendedSets.map((recommendedSet, index) => (
-        <div onClick={() => props.onSetClick(recommendedSet)} key={index} className="set-preview-card">
+        <div
+          style = {{cursor: 'pointer'}}
+          onClick={() => props.onSetClick(recommendedSet)} 
+          key={index} 
+          className="set-preview-card">
           <div className="header">
             <div className="lhs">
               { !recommendedSet.isPublic &&

@@ -2,8 +2,10 @@ import './SetPreview.css';
 import CloseButton from "../../images/SetPreview/CloseButton.png";
 import { useSelector } from "react-redux";
 import { firestoreTimestampToString } from "../../utils/DateUtils";
+import { useNavigate } from "react-router-dom";
 
 const SetPreview = (props) => {
+  const navigate = useNavigate();
   const currentCustomSet = useSelector(state => state.customSets.currentCustomSet);
   const user = useSelector(state => state.user);
   const setIDAuthorDict = useSelector(state => state.customSets.setIDAuthorDict);
@@ -14,10 +16,14 @@ const SetPreview = (props) => {
     } else {
       return setIDAuthorDict[currentCustomSet.id];
     }
-  }
+  };
+
+  const launchLiveGame = () => {
+    navigate("/waiting-room");
+  };
 
   return (
-    <div className="set-preview">
+    <div  className="set-preview">
       <div className="contents-card">
         <div className="heading">
           <h2>{currentCustomSet.title}</h2>
@@ -34,7 +40,7 @@ const SetPreview = (props) => {
         </div>
         <p className="description">{currentCustomSet.description}</p>
         <div className="host-options-buttons">
-          <button className="free-option">
+          <button onClick={() => launchLiveGame()} className="free-option">
             <div className="contents">
               <h4>Host for free</h4>
               <p>5 buzzer limit</p>

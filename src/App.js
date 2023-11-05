@@ -8,6 +8,7 @@ import { signIn } from "./redux/user/userSlice";
 import LandingPage from './pages/LandingPage/LandingPage';
 import Authentication from "./pages/Authentication/Authentication";
 import Homepage from "./pages/Homepage/Homepage";
+import WaitingRoom from "./pages/WaitingRoom/WaitingRoom";
 
 import {
   BrowserRouter as Router,
@@ -37,7 +38,7 @@ function AuthHandler() {
   useEffect(() => {
     const auth = getAuth();
     auth.onAuthStateChanged(async user => {
-      if (user && location.pathname !== "/create-account") {
+      if (user && location.pathname === "/") {
         const userRef = firestore.doc(`users/${user.uid}`);
         const snap = await userRef.get();
         
@@ -69,6 +70,7 @@ function App() {
         <Route exact path="/" element={ <LandingPage/> } />
         <Route exact path="/browse" element={ <Homepage/> } />
         <Route exact path="/sign-in" element={ <Authentication/> } />
+        <Route exact path="/waiting-room" element={ <WaitingRoom/> } />
       </Routes>
     </Router>
   );
