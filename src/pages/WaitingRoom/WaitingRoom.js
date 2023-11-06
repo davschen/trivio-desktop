@@ -1,5 +1,7 @@
-import { useSelector } from "react-redux";
 import './WaitingRoom.css';
+
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import SelectorTriangles from "../../images/WaitingRoom/SelectorTriangles.png";
 import TextFormat from "../../images/WaitingRoom/TextFormat.png";
@@ -7,9 +9,18 @@ import ArrowClockwise from "../../images/WaitingRoom/ArrowClockwise.png";
 import Hourglass from "../../images/WaitingRoom/Hourglass.png";
 import ArrowRight from "../../images/WaitingRoom/ArrowRight.png";
 
+import { fillFinishedClues } from "../../redux/gameplay/gameplaySlice";
+
 const WaitingRoom = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const currentCustomSet = useSelector(state => state.customSets.currentCustomSet);
   const currentUser = useSelector(state => state.user);
+
+  const handleContinue = () => {
+    navigate('/gameplay');
+    dispatch(fillFinishedClues(currentCustomSet));
+  }
 
   return (
     <div className="waiting-room">
@@ -39,7 +50,7 @@ const WaitingRoom = () => {
                 133.891C4.98961 130.86 0 123.5 0 115.313V20Z" fill="#2B2674"/>
                 <path d="M0.5 20C0.5 9.23043 9.23045 0.5 20 0.5H353C363.77 0.5 372.5 9.23045 372.5 20V115.697C372.5 
                 123.49 367.859 130.536 360.698 133.613L200.911 202.271C196.161 204.312 190.795 204.384 185.993 
-                202.469L12.7798 133.427C5.36487 130.471 0.5 123.295 0.5 115.313V20Z" stroke="white" stroke-opacity="0.3"/>
+                202.469L12.7798 133.427C5.36487 130.471 0.5 123.295 0.5 115.313V20Z" stroke="white" strokeOpacity="0.3"/>
               </svg>
               <div className="instruction-text">
                 <p>Enter code at <b>www.trivio.live</b> in a mobile 
@@ -73,7 +84,7 @@ const WaitingRoom = () => {
           <img src={Hourglass} alt="Hourglass"/>
           <h3>Waiting for contestants to join...</h3>
         </div>
-        <button style={{opacity: '10%'}} className="continue-button">
+        <button onClick={() => handleContinue()} style={{opacity: '10%'}} className="continue-button">
           <h2>Continue</h2>
           <img src={ArrowRight} alt="Arrow pointing right"/>
         </button>

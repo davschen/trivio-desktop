@@ -33,6 +33,11 @@
   src: url('./fonts/SF-Pro-Display-Regular.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'Lora';
+  src: url('./fonts/Lora-Regular.ttf') format('truetype');
+}
+
 button {
   color: white;
   background: none;

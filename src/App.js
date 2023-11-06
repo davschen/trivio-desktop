@@ -9,6 +9,7 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import Authentication from "./pages/Authentication/Authentication";
 import Homepage from "./pages/Homepage/Homepage";
 import WaitingRoom from "./pages/WaitingRoom/WaitingRoom";
+import Gameplay from "./pages/Gameplay/Gameplay";
 
 import {
   BrowserRouter as Router,
@@ -71,6 +72,7 @@ function App() {
         <Route exact path="/browse" element={ <Homepage/> } />
         <Route exact path="/sign-in" element={ <Authentication/> } />
         <Route exact path="/waiting-room" element={ <WaitingRoom/> } />
+        <Route exact path="/gameplay" element={ <Gameplay/> } />
       </Routes>
     </Router>
   );
